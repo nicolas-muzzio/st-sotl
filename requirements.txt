@@ -1,0 +1,12 @@
+matplotlib
+numpy
+pandas
+sklearn
+
+
+pandas
+json
+requests
+python-dotenv
+dotenv
+os
