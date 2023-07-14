@@ -99,14 +99,14 @@ def find_transformer(minute):
     Calculate the closest transformer, load the transformer from the pickle file and returns it
     """
     if minute > 24:
-        transformer_file_path = os.path.join(os_path,f"preprocessing/pickles_transformers/30/{league}_transformer.pkl")
+        transformer_file_path = f"preprocessing/pickles_transformers/30/{league}_transformer.pkl"
         with open(transformer_file_path, "rb") as transformer_file:
         # Load the transformer from the pickle file
             transformer = pickle.load(transformer_file)
         return transformer
     else:
         minute_t = (24//5 + 1) * 5
-        transformer_file_path = os.path.join(os_path,f"preprocessing/pickles_transformers/{minute_t}/{league}_transformer.pkl")
+        transformer_file_path = f"preprocessing/pickles_transformers/{minute_t}/{league}_transformer.pkl"
         with open(transformer_file_path, "rb") as transformer_file:
             transformer = pickle.load(transformer_file)
         return transformer
