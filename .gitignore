@@ -1,1 +1,4 @@
-raw_data/
+.env
+#images/champion/
+
+app/.streamlit
