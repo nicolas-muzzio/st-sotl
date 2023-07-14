@@ -23,7 +23,7 @@ from PIL import Image
 import os
 import sys
 
-os_path = Path(__file__).parent
+os_path = os.path.dirname(__file__)
 
 sys.path.insert(0,os.path.abspath(".."))
 
