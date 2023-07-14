@@ -25,7 +25,7 @@ import sys
 
 os_path = Path(__file__).parent
 
-sys.path.insert(0,os.path.abspath("../.."))
+sys.path.insert(0,os.path.abspath(".."))
 
 #Packages to handle jsons and predicting
 from preprocessing.get_json import process_one_json, check_and_create_columns
