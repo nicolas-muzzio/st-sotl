@@ -35,4 +35,10 @@ st.write("")
 
 st.write("")
 
+st.write("##### **Oldies** :hourglass_flowing_sand:: know the winning odds of old games :open_file_folder:")
+
+st.write("")
+
+st.write("")
+
 st.write("##### **The Team** :busts_in_silhouette::busts_in_silhouette:: to know more about us")
