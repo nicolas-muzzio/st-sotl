@@ -4,7 +4,7 @@ import pandas as pd
 def calculate_event_differences(df):
     """Recibe un df y resta sucesivamente las filas 1 y 2, agrupando en un nuevo df el resultante de la resta.
     La función es utilizada para agrupar los datos de una partida por equipo para obtener la diferencia de las estadísticas.
-    Mantiene el target de la primera fila"""    
+    Mantiene el target de la primera fila"""
     # Seleccionar todas las columnas excepto "matchId" y "target"
     columnas_no_matchId = df.columns[~df.columns.isin(["matchId", "target"])]
 
@@ -30,7 +30,7 @@ def calculate_event_differences(df):
         resta_filas = fila1 - fila2
 
         # Agregar la resta al nuevo DataFrame all_events_diff
-        all_events_diff = all_events_diff.append(resta_filas, ignore_index=True)
+        all_events_diff = pd.concat([all_events_diff, resta_filas], ignore_index=True)
 
     # Asignar el primer valor de las columnas booleanas en cada fila del nuevo DataFrame
     for columna in df.select_dtypes(include=[bool]):
