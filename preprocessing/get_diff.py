@@ -78,9 +78,11 @@ def calculate_event_differences(df):
         resta_filas = fila1 - fila2
 
         # Agregar la resta al nuevo DataFrame all_events_diff
-        all_events_diff = all_events_diff.append(resta_filas, ignore_index=True)
+        #all_events_diff = all_events_diff.append(resta_filas, ignore_index=True)
 
         #all_events_diff = pd.concat([all_events_diff, resta_filas], axis =0, ignore_index=False)
+
+        all_events_diff.loc[len(all_events_diff)] = resta_filas
 
     # Asignar el primer valor de las columnas booleanas en cada fila del nuevo DataFrame
     for columna in df.select_dtypes(include=[bool]):
