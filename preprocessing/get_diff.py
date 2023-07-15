@@ -30,7 +30,7 @@ def calculate_event_differences(df):
         resta_filas = fila1 - fila2
 
         # Agregar la resta al nuevo DataFrame all_events_diff
-        all_events_diff = pd.concat([all_events_diff, resta_filas], axis = 1, ignore_index=True)
+        all_events_diff = pd.concat([all_events_diff, resta_filas], axis = 1, ignore_index=False)
 
     # Asignar el primer valor de las columnas booleanas en cada fila del nuevo DataFrame
     for columna in df.select_dtypes(include=[bool]):
