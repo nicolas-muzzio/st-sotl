@@ -1,9 +1,6 @@
 import streamlit as st
 
-from pathlib import Path
-
 #To work with requests and APIs
-import json
 import requests
 
 #To operate with date and times
@@ -22,8 +19,6 @@ from PIL import Image
 #from dotenv import load_dotenv
 import os
 import sys
-
-os_path = os.path.dirname(__file__)
 
 sys.path.insert(0,os.path.abspath(".."))
 
@@ -329,8 +324,9 @@ region = region_dict[chosen_region]
 match_type = match_type_list[chosen_match_type]
 
 #puuid and encrypted_summonerID obtention
-path_puuid = f'https://{region}.api.riotgames.com/lol/summoner/v4/summoners/by-name/{summoner_name}?api_key={api_key}'
+
 try:
+    path_puuid = f'https://{region}.api.riotgames.com/lol/summoner/v4/summoners/by-name/{summoner_name}?api_key={api_key}'
     summoner_data = requests.get(path_puuid).json()
 except:
     st.write("Summoner not found, please check Summoner Name and Region")
