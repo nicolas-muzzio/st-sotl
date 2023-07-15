@@ -325,14 +325,14 @@ match_type = match_type_list[chosen_match_type]
 
 #puuid and encrypted_summonerID obtention
 
+path_puuid = f'https://{region}.api.riotgames.com/lol/summoner/v4/summoners/by-name/{summoner_name}?api_key={api_key}'
 try:
-    path_puuid = f'https://{region}.api.riotgames.com/lol/summoner/v4/summoners/by-name/{summoner_name}?api_key={api_key}'
     summoner_data = requests.get(path_puuid).json()
+    puuid = summoner_data['puuid']
 except:
     st.write("Summoner not found, please check Summoner Name and Region")
     st.stop()
 
-puuid = summoner_data['puuid']
 encrypted_summonerID = summoner_data['id']
 
 #Tiers obtention -> needed to know which model we need to use
@@ -357,7 +357,7 @@ matches = fetch_match(puuid, api_key, region, match_type, count = 20)
 
 #Display Ranks
 if no_tier:
-    st.markdown("##### You do not have a ranked tier")
+    st.markdown("##### You do not have a ranked tier, probabilities of winning will be predicted considering a SILVER tier")
 else:
     columns2 = st.columns(4)
     if solo_tier != 0:
@@ -391,6 +391,11 @@ for match in matches:
     path_match_timeline =f"https://{macro_region[str(region)]}.api.riotgames.com/lol/match/v5/matches/{match}/timeline?api_key={api_key}"
 
     match_timeline = requests.get(path_match_timeline).json()
+
+    match_length = len(match_timeline["info"]['frames'])
+
+    if match_length < 10:
+        continue
 
     #Obtains unx timestamp and converts it into date time
     formatted_date = datetime.datetime.fromtimestamp(match_final["info"]["gameStartTimestamp"]/1000).strftime('%Y-%m-%d %H:%M')
@@ -442,8 +447,8 @@ for match in matches:
         st.write("##### :red[Champion]")
 
     #Evaluates match lenght and create a list of minutes
-    minute = 15 #This is arbitrary were we are evaluating if it was a comeback or not
-    match_length = len(match_timeline["info"]['frames'])
+    minute = 10 #This is arbitrary were we are evaluating if it was a comeback or not
+    #match_length = len(match_timeline["info"]['frames'])
     minute_list = list(range(match_length))
 
     #Loops both teams at the same time

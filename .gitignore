@@ -1,4 +1,4 @@
 .env
 #images/champion/
 
-app/.streamlit
+.streamlit/
