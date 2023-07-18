@@ -121,6 +121,26 @@ region_dict = {
     "Vietnam": "VN"
     }
 
+event_types_dict = {'KILL_ACE': "Ace",
+        'FIRST_BLOOD': "First Blood",
+        '_KILL_MULTI': "Multi Kill",
+        'minionsKilled': "minions",
+        'AIR_DRAGON': "Air Dragon",
+        'CHEMTECH_DRAGON' : "Chemtech Dragon",
+        'EARTH_DRAGON' :"Earth Dragon",
+        'FIRE_DRAGON' :"Fire Dragon",
+        'HEXTECH_DRAGON' :"Hextech Dragon",
+        'RIFTHERALD' :"Rift Herald",
+        'WATER_DRAGON' :"Water Dragon",
+        'ELDER_DRAGON' :"Elder Dragon",
+        'BARON_NASHOR' :"Baron Nashor",
+        'totalGold' : "Total Gold",
+        'INNER_TURRET' : "Inner Turret",
+        'OUTER_TURRET' : "Outer Turret",
+        'BASE_TURRET' : "Base Turret",
+        'INHIBITOR_BUILDING' : "Inhibitor",
+        'NEXUS_TURRET' : "Nexus Turret"}
+
 #List with columns of interest for data preprocessing
 columns_of_interest = ['killType_KILL_ACE',
         'killType_KILL_FIRST_BLOOD',
@@ -375,7 +395,7 @@ def prediction(json,minute_list,look_events,columns_of_interest,fitted_model,pro
             proba = model.predict_proba(X_pred_prep)
             #If user is team 1 we need to save proba_position 1, the probability of victory
             #If user is team 2 we need to save proba_position 2, the probability of defeat for team 1
-            result.append(proba[0][proba_position]*100)
+            result.append(round(proba[0][proba_position]*100,2))
         return  result
 
 def get_image(champion):
@@ -391,7 +411,7 @@ def offset_image(coord, name, ax):
     Offsets an image
     """
     img = get_image(name)
-    rez = img.resize((np.array(img.size)/3.5).astype(int))
+    rez = img.resize((np.array(img.size)/5).astype(int))
     im = OffsetImage(rez, zoom=0.72)
     im.image.axes = ax
     ab = AnnotationBbox(im, (coord, 0),  xybox=(0., -16.), frameon=False,
