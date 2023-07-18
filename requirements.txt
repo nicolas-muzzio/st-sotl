@@ -2,3 +2,4 @@ matplotlib
 
 pandas==1.4.4
 scikit-learn==1.2.2
+plotly
