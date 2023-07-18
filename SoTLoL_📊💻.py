@@ -24,21 +24,25 @@ st.write("")
 st.write("")
 
 st.write("##### **NoobMeter** :video_game:: know the winning odds of your last games and if you are :orange[Afraid to Win] :clown_face: or you :green[Defied the Odds] :heart_on_fire:")
+st.write("##### :link: https://spirit-of-the-lol.streamlit.app/NoobMeter")
 
 st.write("")
 
 st.write("")
 
 st.write("##### **Predictor** :dart:: select team objective differences to predict if your team will end in Victory :trophy: or Defeat :thumbsdown:")
+st.write("##### :link: https://spirit-of-the-lol.streamlit.app/Predictor")
 
 st.write("")
 
 st.write("")
 
 st.write("##### **Oldies** :hourglass_flowing_sand:: know the winning odds of old games :open_file_folder:")
+st.write("##### :link: https://spirit-of-the-lol.streamlit.app/Oldies")
 
 st.write("")
 
 st.write("")
 
 st.write("##### **The Team** :busts_in_silhouette::busts_in_silhouette:: to know more about us")
+st.write("##### :link: https://spirit-of-the-lol.streamlit.app/The_Team")

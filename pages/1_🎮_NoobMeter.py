@@ -237,6 +237,8 @@ for match in matches:
 
     columns3[0].write("")
     columns3[0].write("")
+    columns3[0].write(f" ")
+    columns3[0].write(f" ")
 
 
     fig2, ax = plt.subplots() #figsize=(6, 2)
