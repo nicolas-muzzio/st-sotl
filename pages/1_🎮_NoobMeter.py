@@ -239,6 +239,8 @@ for match in matches:
     columns3[0].write("")
     columns3[0].write(f" ")
     columns3[0].write(f" ")
+    columns3[0].write(f" ")
+    columns3[0].write(f" ")
 
 
     fig2, ax = plt.subplots() #figsize=(6, 2)
@@ -437,11 +439,18 @@ for match in matches:
     fig.add_trace(go.Scatter(x=x_values_b, y=y_values_b, mode='markers', marker=dict(size=10, color=colors_b), text=tooltips_b, hoverinfo='text', name='Tooltips'))
 
     # Actualizar el diseño del gráfico
-    fig.update_layout(title='Winning Probability (%) and Objectives', title_pad_l=275,xaxis=dict(range=[-0.5, match_length]), yaxis=dict(range=[0, 119]), showlegend=False)
+    fig.update_layout(title='Winning Probability (%) and Objectives',
+    title_y=0.82,
+    title_x = 0.35,
+    xaxis=dict(range=[0.5, match_length]),
+    yaxis=dict(range=[0, 119]),
+    showlegend=False,
+                      xaxis_title='Minutes',
+                      yaxis_title='Winning Probability (%)')
 
     # Agregar títulos a la izquierda y a la altura de los valores de Y
     fig.add_annotation(x=2, y=jungle_y_value, text='Jungle Objectives', showarrow=False, font=dict(size=12))
-    fig.add_annotation(x=2, y=buildings_y_value, text='Buildings Objectives', showarrow=False, font=dict(size=12))
+    fig.add_annotation(x=2, y=buildings_y_value, text='Building Objectives', showarrow=False, font=dict(size=12)) #color= "#000000"
 
     # Mostrar el gráfico interactivo en Streamlit
     columns3[1].plotly_chart(fig)

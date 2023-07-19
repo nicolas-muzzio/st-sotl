@@ -337,7 +337,7 @@ def diagnosis(proba, result):
     Evaluates the probability and the result to give a diagnosis of the match
     """
     if proba > 60 and result == "Defeat":
-        return ":orange[Diagnosis: GiT GuD] :clown_face:"
+        return ":orange[Diagnosis: Afraid to Win] :collision:"
     if proba < 40 and result == "Victory":
         return ":green[Diagnosis: Defied the Odds] :heart_on_fire:"
     else:

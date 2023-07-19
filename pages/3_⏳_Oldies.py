@@ -181,7 +181,9 @@ champ_list = [match_final["info"]["participants"][i]["championName"] for i in ra
 colors = ['#008CBA'] * 5 + ['#E9422E'] * 5
 
 columns3[0].write("")
-columns3[0].write("")
+
+columns3[0].write(f" ")
+columns3[0].write(f" ")
 
 
 fig2, ax = plt.subplots() #figsize=(6, 2)
@@ -384,7 +386,7 @@ fig.update_layout(title='Winning Probability (%) and Objectives', title_pad_l=27
 
 # Agregar títulos a la izquierda y a la altura de los valores de Y
 fig.add_annotation(x=2, y=jungle_y_value, text='Jungle Objectives', showarrow=False, font=dict(size=12))
-fig.add_annotation(x=2, y=buildings_y_value, text='Buildings Objectives', showarrow=False, font=dict(size=12))
+fig.add_annotation(x=2, y=buildings_y_value, text='Building Objectives', showarrow=False, font=dict(size=12))
 
 # Mostrar el gráfico interactivo en Streamlit
 columns3[2].plotly_chart(fig)

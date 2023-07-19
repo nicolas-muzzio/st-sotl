@@ -23,7 +23,7 @@ st.write("")
 
 st.write("")
 
-st.write("##### **NoobMeter** :video_game:: know the winning odds of your last games and if you are :orange[Afraid to Win] :clown_face: or you :green[Defied the Odds] :heart_on_fire:")
+st.write("##### **NoobMeter** :video_game:: know the winning odds of your last games and if you were :orange[Afraid to Win] :collision: or you :green[Defied the Odds] :heart_on_fire:")
 st.write("##### :link: https://spirit-of-the-lol.streamlit.app/NoobMeter")
 
 st.write("")
