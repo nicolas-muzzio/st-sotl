@@ -145,6 +145,12 @@ for match in matches:
     #Info for loading model
     look_events=["CHAMPION_SPECIAL_KILL","CHAMPION_KILL","ELITE_MONSTER_KILL","BUILDING_KILL"]
     league=unique_tier(solo_tier,flex_tier)
+
+
+    #Patch to deal with new "EMERALD" rank
+    if league == "EMERALD":
+        league = "PLATINUM"
+
     pickle_file_path = f"model/pickles_models/{league}_model.pkl"
     with open(pickle_file_path, "rb") as file:
         # Load the data from the pickle file
