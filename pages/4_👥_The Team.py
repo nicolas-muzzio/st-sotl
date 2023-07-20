@@ -40,7 +40,7 @@ columns[0].write("#### :green[A Video Game]")
 columns[1].write("#### Baldur's Gate 2")
 columns[2].write("#### Chrono Trigger")
 
-columns[3].write("#### Cloud Punk")
+columns[3].write("#### Cloudpunk")
 
 columns[4].write("#### Warcraft II")
 
