@@ -46,3 +46,13 @@ st.write("")
 
 st.write("##### **The Team** :busts_in_silhouette::busts_in_silhouette:: to know more about us")
 st.write("##### :link: https://spirit-of-the-lol.streamlit.app/The_Team")
+
+st.write("")
+
+st.write("")
+
+st.write("")
+
+st.write("")
+
+st.write("Spirit of the LoL is not endorsed by Riot Games and does not reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games and all associated properties are trademarks or registered trademarks of Riot Games, Inc")
