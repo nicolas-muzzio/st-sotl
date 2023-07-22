@@ -32,7 +32,7 @@ st.set_page_config(
             initial_sidebar_state="auto") # collapsed
 
 #Page Title
-st.title('NoobMeter :video_game:')
+st.title('OddsMeter :video_game:')
 
 #Main Form to get data from user
 with st.form(key='params_for_api'):
