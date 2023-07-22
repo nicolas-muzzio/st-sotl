@@ -79,7 +79,7 @@ else:
     for i in range(len(ranked_tiers)):
         if ranked_tiers[i]["queueType"] == "RANKED_SOLO_5x5":
             solo_tier = ranked_tiers[i]["tier"]
-        else:
+        elif ranked_tiers[i]["queueType"] == "RANKED_FLEX_SR":
             flex_tier = ranked_tiers[i]["tier"]
 
 #match id obtention
@@ -114,7 +114,9 @@ for match in matches:
     #To find match type using queues_dict
     match_type_key = match_final["info"]["queueId"]
 
-    if match_type_key in [450, 720]:
+
+
+    if match_type_key in [450, 720,1700]:
         continue
 
     #Obtain Match Timeline Data
@@ -147,7 +149,7 @@ for match in matches:
     league=unique_tier(solo_tier,flex_tier)
 
 
-    #Patch to deal with new "EMERALD" rank
+    #Hotfix to deal with new "EMERALD" rank
     if league == "EMERALD":
         league = "PLATINUM"
 
