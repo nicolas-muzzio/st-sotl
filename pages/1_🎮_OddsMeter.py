@@ -26,7 +26,7 @@ sys.path.insert(0,os.path.abspath(".."))
 api_key = st.secrets["API_KEY"]
 
 st.set_page_config(
-            page_title="Noobmeter", # Adjust things later
+            page_title="OddsMeter", # Adjust things later
             page_icon="🎮", #Change icon later
             layout="wide", # or centered, wide has more space
             initial_sidebar_state="auto") # collapsed
