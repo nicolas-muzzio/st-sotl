@@ -170,3 +170,13 @@ if (data_df == 0).all(axis=1).all():
     proba = 50.0
 
 st.write(f"### The propability of Team 1 winning is {proba}")
+
+st.write("")
+
+st.write("")
+
+st.write("")
+
+st.write("")
+
+st.write("Spirit of the LoL is not endorsed by Riot Games and does not reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games and all associated properties are trademarks or registered trademarks of Riot Games, Inc")
