@@ -23,7 +23,7 @@ st.write("")
 
 st.write("")
 
-st.write("##### **OddsMeter** :video_game:: know the winning odds of your last games and if you were :orange[Led but Lost] :collision: or you :green[Defied the Odds] :heart_on_fire:")
+st.write("##### **OddsMeter** :video_game:: know the winning odds of your last games and if you :orange[Led but Lost] :collision: or you :green[Defied the Odds] :heart_on_fire:")
 st.write("##### :link: https://spirit-of-the-lol.streamlit.app/OddsMeter")
 
 st.write("")
