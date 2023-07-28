@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components  # Import Streamlit
 
 
 st.set_page_config(
@@ -62,6 +63,8 @@ with open("riot.txt", "r") as file:
             file_name="riot.txt",
 
           )
+
+components.html("<a href=riot.txt download=riot.txt>Download</a>")
 
 st.write("")
 
