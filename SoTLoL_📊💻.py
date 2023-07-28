@@ -62,9 +62,11 @@ with open("riot.txt", "r") as file:
             data=file,
             file_name="riot.txt",
 
-          )
 
-components.html("<a href=riot.txt download=riot.txt>riot.txt</a>")
+          )
+    components.html("<a href=riot.txt download=riot.txt>riot.txt</a>")
+
+
 
 st.write("")
 
