@@ -64,9 +64,9 @@ with open("riot.txt", "r") as file:
 
 
           )
-    components.html("<a href=riot.txt download=riot.txt>riot.txt</a>")
 
 
+components.html("<a href=https://drive.google.com/file/d/17KUwBrDZpUqfsQyUxZCG4l97crF3_htE/view?usp=drive_link download=riot.txt>riot.txt</a>")
 
 st.write("")
 
