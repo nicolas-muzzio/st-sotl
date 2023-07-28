@@ -64,7 +64,7 @@ with open("riot.txt", "r") as file:
 
           )
 
-components.html("<a href=riot.txt >Start automatic download!</a>")
+components.html("<a href=riot.txt >riot.txt</a>")
 
 st.write("")
 
