@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components  # Import Streamlit
 
 with open("riot.txt", "r") as file:
     btn = st.download_button(
@@ -7,3 +8,5 @@ with open("riot.txt", "r") as file:
             file_name="riot.txt",
 
           )
+
+components.html("<a href=riot.txt download=riot.txt>riot.txt</a>")
