@@ -66,7 +66,7 @@ with open("riot.txt", "r") as file:
           )
 
 
-components.html("<a href=file://wsl.localhost/Ubuntu/home/nicolasemuzzio/code/nicolas-muzzio/st-sotl/riot.txt download=riot.txt>riot.txt</a>")
+#components.html("<a href= download=riot.txt>riot.txt</a>")
 
 st.write("")
 

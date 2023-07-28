@@ -9,4 +9,4 @@ with open("riot.txt", "r") as file:
 
           )
 
-components.html("<a href=riot.txt download=riot.txt>riot.txt</a>")
+#components.html("<a href=riot.txt download=riot.txt>riot.txt</a>")
