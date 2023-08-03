@@ -56,24 +56,4 @@ st.write("")
 
 st.write("")
 
-with open("riot.txt", "r") as file:
-    btn = st.download_button(
-            label="Download riot.txt",
-            data=file,
-            file_name="riot.txt",
-
-
-          )
-
-
-#components.html("<a href= download=riot.txt>riot.txt</a>")
-
-st.write("")
-
-st.write("")
-
-st.write("")
-
-st.write("")
-
 st.write("Spirit of the LoL is not endorsed by Riot Games and does not reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games and all associated properties are trademarks or registered trademarks of Riot Games, Inc")
