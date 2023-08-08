@@ -493,7 +493,7 @@ for match in matches:
 
     match_counter = match_counter + 1
 
-    if match_counter == 1:
+    if match_counter == 5:
         break
 
 st.write("")
