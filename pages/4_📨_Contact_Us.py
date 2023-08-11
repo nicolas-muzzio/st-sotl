@@ -2,8 +2,11 @@ import streamlit as st
 from streamlit_functions.functions import check_text,check_email,check_inputs_contact,send_email
 
 
-def check_form(user_name,user_email,subject,message_text):
-
+def check_form_send_email(user_name,user_email,subject,message_text):
+    """
+    If all the inputs are fine, it sends the email and disables the submit button
+    If an input is missing, in tells the user to complete them
+    """
     if check_inputs_contact(user_name,user_email,subject,message_text):
         send_email(user_name,user_email,subject,message_text)
 
@@ -19,9 +22,9 @@ def check_form(user_name,user_email,subject,message_text):
 
 st.set_page_config(
             page_title="Contact Us", # Adjust things later
-            page_icon="📨", #Change icon later
+            page_icon="📨", #Change icon later if needed
             layout="wide", # or centered, wide has more space
-            initial_sidebar_state="auto") # collapsed
+            initial_sidebar_state="auto") # alternative is collapsed
 
 # Initialize disabled for form_submit_button to False
 if "disabled" not in st.session_state:
@@ -31,6 +34,7 @@ st.title('Contact Us :incoming_envelope:')
 
 st.write("#### Complete the required fields and press the Submit button")
 
+#In this case, the user input is outside of the form
 columns = st.columns(2)
 
 user_name = columns[0].text_input("Your name:", max_chars = 75)
@@ -51,10 +55,12 @@ if not check_text(message_text,6):
 
 columns2 = st.columns(11)
 
+#The form just contains the submit button
+#On click it calls the check_form_send_email function
 with columns2[0].form(key='contact_data', clear_on_submit=False):
 
     st.form_submit_button('Submit', disabled = st.session_state.disabled,
-                          on_click= check_form, args = (user_name, user_email,subject,message_text))
+                          on_click= check_form_send_email, args = (user_name, user_email,subject,message_text))
 
 st.write("")
 

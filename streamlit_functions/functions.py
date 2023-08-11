@@ -447,6 +447,9 @@ def check_text(text, length):
         return False
 
 def check_inputs_contact(user_name,user_email,subject,message_text):
+    """
+    Checks if all the user inputs are completed and correct
+    """
     if check_email(user_email) and check_text(user_name,1) and check_text(subject,3) and \
     check_text(message_text,6):
         return True
@@ -454,6 +457,9 @@ def check_inputs_contact(user_name,user_email,subject,message_text):
         return False
 
 def send_email(user_name,user_email,subject,message_text):
+    """
+    Sends and email to the developers with the user message and info
+    """
     port = 587  # For starttls
     smtp_server = "smtp.gmail.com"
     sender_email = st.secrets["SENDER_EMAIL"]
