@@ -4,6 +4,9 @@ import os
 from matplotlib.offsetbox import OffsetImage,AnnotationBbox
 from PIL import Image
 import numpy as np
+import re
+import streamlit as st
+import smtplib, ssl #for sending emails
 
 #Packages to handle jsons and predicting
 from preprocessing.get_json import process_one_json, check_and_create_columns
@@ -418,3 +421,53 @@ def offset_image(coord, name, ax):
                         xycoords='data',  boxcoords="offset points", pad=0)
 
     ax.add_artist(ab)
+
+
+
+
+# Make a regular expression for validating an Email
+regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
+
+def check_email(email):
+    """
+    Validates an Email
+    """
+    if(re.fullmatch(regex, email)):
+        return True
+    else:
+        return False
+
+def check_text(text, length):
+    """
+    Validates length of a text
+    """
+    if len(text) >= length:
+        return True
+    else:
+        return False
+
+def check_inputs_contact(user_name,user_email,subject,message_text):
+    if check_email(user_email) and check_text(user_name,1) and check_text(subject,3) and \
+    check_text(message_text,6):
+        return True
+    else:
+        return False
+
+def send_email(user_name,user_email,subject,message_text):
+    port = 587  # For starttls
+    smtp_server = "smtp.gmail.com"
+    sender_email = st.secrets["SENDER_EMAIL"]
+    receiver_email = st.secrets["RECEIVER_EMAIL"]
+    password = st.secrets["PASSWORD"]
+    message = f"""\
+    Subject: {subject}
+
+    {message_text} ---- {user_email} ---- {user_name}"""
+
+    context = ssl.create_default_context()
+    with smtplib.SMTP(smtp_server, port) as server:
+        server.ehlo()  # Can be omitted
+        server.starttls(context=context)
+        server.ehlo()  # Can be omitted
+        server.login(sender_email, password)
+        server.sendmail(sender_email, receiver_email, message)

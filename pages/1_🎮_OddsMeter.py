@@ -18,7 +18,9 @@ import matplotlib.pyplot as plt
 import os
 import sys
 
-from streamlit_functions.functions import fetch_match, unique_tier, find_image, offset_image, prediction, match_result, diagnosis,event_types_dict, queues_dict, region_dict, columns_of_interest,macro_region,match_type_list
+from streamlit_functions.functions import fetch_match, unique_tier, find_image, \
+offset_image, prediction, match_result, diagnosis,\
+event_types_dict, queues_dict, region_dict, columns_of_interest,macro_region,match_type_list
 
 sys.path.insert(0,os.path.abspath(".."))
 
@@ -87,13 +89,13 @@ matches = fetch_match(puuid, api_key, region, match_type, count = 20)
 
 #Display Ranks
 if no_tier:
-    st.markdown("##### You do not have a ranked tier, probabilities of winning will be predicted considering a SILVER tier")
+    st.markdown(f"##### {summoner_name} does not have a ranked tier, probabilities of winning will be predicted considering a SILVER tier")
 else:
-    columns2 = st.columns(4)
+    columns2 = st.columns(2)
     if solo_tier != 0:
-        columns2[0].markdown(f"##### Your Solo Queue Tier is {solo_tier}")
+        columns2[0].markdown(f"##### {summoner_name} Solo Queue Tier is {solo_tier}")
     if flex_tier != 0:
-        columns2[2].markdown(f"##### Your Flex Queue Tier is {flex_tier}")
+        columns2[1].markdown(f"##### {summoner_name} Flex Queue Tier is {flex_tier}")
 
 st.write(f" ")
 st.write(f" ")
